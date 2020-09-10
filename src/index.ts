@@ -8,7 +8,7 @@ export class Transformer {
    * @param callback Callback function to be applied to transformation result
    */
   capitalize(text: string, all?: boolean, callback?: (text: string) => string): string {
-    const transformedText = text.replace(!!all ? /\s[a-z]|^[a-z]/g : /^[a-z]/, v => v.toUpperCase());
+    const transformedText = text.trim().replace(!!all ? /\s[a-z]|^[a-z]/g : /^[a-z]/, v => v.toUpperCase());
     return !!callback ? callback(transformedText) : transformedText;
   }
 
@@ -21,7 +21,7 @@ export class Transformer {
    * @param callback Callback function to be applied to transformation result
    */
   lowercase(text: string, all?: boolean, callback?: (text: string) => string): string {
-    const transformedText = text.replace(!!all ? /\s[A-Z]|^[A-Z]/g : /^[A-Z]/, v => v.toLowerCase());
+    const transformedText = text.trim().replace(!!all ? /\s[A-Z]|^[A-Z]/g : /^[A-Z]/, v => v.toLowerCase());
     return !!callback ? callback(transformedText) : transformedText;
   }
 }

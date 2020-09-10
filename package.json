@@ -1,7 +1,6 @@
 {
   "name": "transform-string-cases",
   "version": "1.0.0",
-  "description": "Transformer of the strings to capitalized case and lowercase.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {

@@ -31,34 +31,44 @@ describe('[Capitalize]', () => {
     const capitalizedAndModifiedText = transformer.capitalize('non capitalized Sentence', true, 
       (capitalizedText: string): string => 'a' + capitalizedText + 'a');
     expect(capitalizedAndModifiedText).toBe('aNon Capitalized Sentencea');
-  })
+  });
+
+  it('should trim the text', () => {
+    const capitalizedText = transformer.capitalize('  nonCapitalized  ');
+    expect(capitalizedText).toBe('NonCapitalized');
+  });
 });
 
 describe('[Lowercase]', () => {
   it('should lowercase a word', () => {
-    const lowercasedWord = transformer.lowercase('LowercasedWord');
-    expect(lowercasedWord).toBe('lowercasedWord');
+    const lowerCasedWord = transformer.lowercase('LowerCasedWord');
+    expect(lowerCasedWord).toBe('lowerCasedWord');
   });
 
-  it('should not change already lowercased word', () => {
-    const lowercasedWord = transformer.lowercase('lowercasedWord');
-    expect(lowercasedWord).toBe('lowercasedWord');
+  it('should not change already lowerCased word', () => {
+    const lowerCasedWord = transformer.lowercase('lowerCasedWord');
+    expect(lowerCasedWord).toBe('lowerCasedWord');
   });
 
   it('should lowercase a sentence', () => {
-    const lowercasedSentence = transformer.lowercase('Lowercased Sentence');
-    expect(lowercasedSentence).toBe('lowercased Sentence');
+    const lowerCasedSentence = transformer.lowercase('LowerCased Sentence');
+    expect(lowerCasedSentence).toBe('lowerCased Sentence');
   });
 
   it('should lowercase all words in sentence', () => {
-    const lowercasedSentence = transformer.lowercase('Lowercased Sentence', true);
-    expect(lowercasedSentence).toBe('lowercased sentence');
+    const lowerCasedSentence = transformer.lowercase('LowerCased Sentence', true);
+    expect(lowerCasedSentence).toBe('lowerCased sentence');
   });
 
   it('should apply callback function to transformed text', () => {
-    const lowercasedAndModifiedText = transformer.lowercase('Lowercased Sentence', true, 
+    const lowerCasedAndModifiedText = transformer.lowercase('LowerCased Sentence', true, 
       (text: string): string => 'a' + text + 'a');
 
-      expect(lowercasedAndModifiedText).toBe('alowercased sentencea');
+      expect(lowerCasedAndModifiedText).toBe('alowerCased sentencea');
+  });
+
+  it('should trim the text', () => {
+    const lowerCasedText = transformer.lowercase('  UpperCased  ');
+    expect(lowerCasedText).toBe('upperCased');
   });
 });
