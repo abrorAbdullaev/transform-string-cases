@@ -16,17 +16,20 @@ All the methods are the property of the Transformer object
     import { Transformer } from 'transform-text-cases';
 
 ### capitalize
-- text -- string to be transformed, transformed text is trimmed
-- all -- boolean to transform all words in given sentence or only first word
-- callback -- callback method for the transformed text: (text: string) => string
-
 
     Transform.capitalize(text, all, callback)
+
+- text -- string to be transformed, transformed text is trimmed
+- all -- boolean to transform all words in given sentence or only first word
+- callback -- callback method for the transformed text: (text: string) => string
+    
     
 ### lowercase
+
+    Transform.lowercase(text, all, callback)
+
 - text -- string to be transformed, transformed text is trimmed
 - all -- boolean to transform all words in given sentence or only first word
 - callback -- callback method for the transformed text: (text: string) => string
 
-
-    Transform.lowercase(text, all, callback)
+    
